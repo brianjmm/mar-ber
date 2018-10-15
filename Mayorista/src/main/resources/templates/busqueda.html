@@ -1,0 +1,23 @@
+<html>
+ 
+ <head>
+ 	<link rel="stylesheet" href="/css/estilos.css"/>
+ </head>
+ <body>
+ <form action="/socios/busqueda">
+  	
+ 	<input type= "text" name="buscar">
+ 	<input type= "submit" value="buscar">
+ 	</form>
+ 		<h2>buscar</h2>
+ 	<div class="card" th:each="socio:${socio}">
+ 	
+ 	  <h1 th:text="${socio.nombre}"></h1>
+ 	  <h2 th:text="${socio.apellido}"></h2>
+ 	  <h3 th:text="${socio.email}"></h3>
+ 	  <h4 th:text="${socio.dni}"></h4>	  
+ 	  <a th:href="|/socios/checkin/${socio.id}|">check-in</a>
+ 	   <a th:href="|/socios/checkout/${socio.id}|">check-out</a>
+ 	</div>
+ </body>
+</html>
